@@ -1,0 +1,82 @@
+.skill-card {
+  background: radial-gradient(circle at top, #020617, #020617);
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 1.6rem;
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.icon-wrapper {
+  width: 42px;
+  height: 42px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-wrapper img {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.skill-card h4 {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color:#f8fafc;
+}
+
+.skill-card p {
+  margin-top: 0.4rem;
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  flex-grow: 1;
+}
+
+.topics {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.8rem;
+}
+
+.arrow {
+  opacity: 0.4;
+}
+
+.skill-card {
+  background: radial-gradient(
+    120% 120% at 50% 0%,
+    #020617 0%,
+    #020617 60%,
+    #01030f 100%
+  );
+  border: 1px solid #1e293b;
+  border-radius: 22px;
+  padding: 1.6rem;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+/* Hover interaction */
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: #2dd4bf;
+  box-shadow:
+    0 10px 30px rgba(45, 212, 191, 0.15),
+    0 0 0 1px rgba(45, 212, 191, 0.25);
+}

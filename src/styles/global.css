@@ -1,0 +1,76 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background: #020617;
+}
+
+#root {
+  min-height: 100svh; /* SUPPORTS MOBILE VIEWPORTS */
+  width: 100%;
+  background: radial-gradient(circle at top, #0f172a, #020617);
+}
+
+html,
+body,
+#root {
+  font-family: "Special Gothic Expanded One",
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    sans-serif;
+  letter-spacing: 0.02em; /* important for this font */
+}
+
+
+body {
+  overscroll-behavior: none;
+  overflow-x: hidden;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+  border-radius: 12px;
+  padding: 0.9rem;
+  outline: none;
+}
+
+
+/* SkillMirror icon glow */
+.skillmirror-icon {
+  font-size: 5rem;
+  color: #2dd4bf;
+  transition: 
+    filter 0.3s ease,
+    transform 0.3s ease;
+}
+
+/* Glow on hover */
+.skillmirror-icon:hover {
+  filter:
+    drop-shadow(0 0 6px rgba(45, 212, 191, 0.6))
+    drop-shadow(0 0 14px rgba(45, 212, 191, 0.5))
+    drop-shadow(0 0 28px rgba(45, 212, 191, 0.4));
+  transform: scale(1.05);
+}

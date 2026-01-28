@@ -1,0 +1,83 @@
+.home {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.8rem;
+  margin-top: 2.5rem;
+}
+
+.home {
+  min-height: 100vh;
+  background: transparent; /* IMPORTANT */
+}
+
+h1 {
+  color: white;
+  margin-top: 1.2rem;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+}
+
+h1 span {
+  color: #2dd4bf;
+}
+
+.subtitle {
+  margin-top: 1rem;
+  max-width: 700px;
+  color: white;
+}
+
+.section-title {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+  color: white;
+}
+
+.skill-grid {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.features {
+  margin-top: 5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2rem;
+}
+.skillmirror-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.skillmirror-icon {
+  font-size: 5rem;
+  color: #2dd4bf;
+  flex-shrink: 0; /* same accent as 'Actually' */
+}
+.difficulty-selector {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.difficulty-btn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1px solid #444;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.difficulty-btn.active {
+  background: #00ffe0;
+  color: #000;
+  font-weight: bold;
+}

@@ -1,0 +1,52 @@
+.title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e0e7ff;
+}
+/* Feature card layout */
+.feature-card {
+  text-align: center;
+  opacity: 0.95;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+}
+.feature-card h4 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #e0e7ff; /* 🔥 visible on dark */
+}
+
+
+/* ICON WRAPPER (important) */
+.feature-card .icon-wrapper {
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* PNG ICON */
+.feature-icon-img {
+  width: 42px;          /* ⬅ bigger */
+  height: 42px;
+  object-fit: contain;
+  filter: drop-shadow(0 0 12px rgba(45, 212, 191, 0.55));
+  transition: transform 0.25s ease, filter 0.25s ease;
+}
+
+/* Hover glow */
+.feature-card:hover .feature-icon-img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 22px rgba(45, 212, 191, 0.75));
+}
+
+/* Text */
+.feature-card p {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  max-width: 260px;
+  line-height: 1.4;
+}

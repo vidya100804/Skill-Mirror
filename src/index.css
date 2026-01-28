@@ -1,0 +1,25 @@
+/* 🔒 FORCE DARK ROOT — NO WHITE ESCAPE */
+html {
+  background: #020617;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: #020617;
+  overscroll-behavior-y: none;
+}
+
+#root {
+  min-height: 100vh;
+  background: radial-gradient(
+    120% 120% at 50% 0%,
+    #020617,
+    #01030f
+  );
+}
+<<<<<<< HEAD
+
+=======
+>>>>>>> 2f001a5f132801ccdf566425effc5c02783bb55b
