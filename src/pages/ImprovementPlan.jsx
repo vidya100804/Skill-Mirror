@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "../styles/ImprovementPlan.css";
 
 import { useAssessment } from "../context/useAssessment";
+import { apiUrl } from "../config/api";
 
 export default function ImprovementPlan() {
   const { skill } = useParams();
@@ -22,19 +23,16 @@ export default function ImprovementPlan() {
       setLoading(true);
 
       try {
-        const res = await fetch(
-          "http://localhost:5000/api/improvement/generate",
-          {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({
-              skill,
-              score: result.score,
-              strengths: result.strengths,
-              gaps: result.gaps,
-            }),
-          },
-        );
+        const res = await fetch(apiUrl("/api/improvement/generate"), {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            skill,
+            score: result.score,
+            strengths: result.strengths,
+            gaps: result.gaps,
+          }),
+        });
 
         const data = await res.json();
 

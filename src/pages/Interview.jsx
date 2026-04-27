@@ -8,6 +8,7 @@ import Waveform from "../components/Waveform";
 import RoboIndicator from "../components/RoboIndicator";
 
 import { useAssessment } from "../context/useAssessment";
+import { apiUrl } from "../config/api";
 
 /* MUI Icons */
 import VolumeUpIcon from "@mui/icons-material/VolumeUp";
@@ -47,7 +48,7 @@ export default function Interview() {
   useEffect(() => {
     if (!interviewId) return;
 
-    fetch("http://localhost:5000/api/interview/start", {
+    fetch(apiUrl("/api/interview/start"), {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ skill }),
@@ -69,7 +70,7 @@ export default function Interview() {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/interview/answer", {
+      const res = await fetch(apiUrl("/api/interview/answer"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

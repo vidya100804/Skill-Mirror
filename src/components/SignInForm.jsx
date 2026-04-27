@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import "../styles/AuthForm.css";
+import { apiUrl } from "../config/api";
 
 export default function SignInForm({ onSuccess }) {
   const { login } = useAuth();
@@ -17,7 +18,7 @@ export default function SignInForm({ onSuccess }) {
     setLoading(true);
 
     try {
-      const res = await fetch("http://localhost:5000/api/auth/login", {
+      const res = await fetch(apiUrl("/api/auth/login"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ identifier, password }),

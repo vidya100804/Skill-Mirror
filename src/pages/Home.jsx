@@ -20,6 +20,7 @@ import mirrorIcon from "../assets/icons/mirror.png";
 import { useNavigate } from "react-router-dom";
 import { useAssessment } from "../context/useAssessment";
 import { useAuth } from "../context/AuthContext";
+import { apiUrl } from "../config/api";
 
 export default function Home() {
   const navigate = useNavigate();
@@ -83,7 +84,7 @@ export default function Home() {
     }
 
     try {
-      const res = await fetch("http://localhost:5000/api/interview/start", {
+      const res = await fetch(apiUrl("/api/interview/start"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({

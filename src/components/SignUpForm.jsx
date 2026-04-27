@@ -1,6 +1,7 @@
  import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import "../styles/AuthForm.css";
+import { apiUrl } from "../config/api";
 
 export default function SignUpForm({ onSuccess }) {
   const { login } = useAuth();
@@ -12,7 +13,7 @@ export default function SignUpForm({ onSuccess }) {
   const handleSubmit = async () => {
     setError("");
     try {
-      const res = await fetch("http://localhost:5000/api/auth/signup", {
+      const res = await fetch(apiUrl("/api/auth/signup"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password }),
