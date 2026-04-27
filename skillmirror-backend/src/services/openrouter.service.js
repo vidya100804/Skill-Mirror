@@ -5,12 +5,16 @@ import fetch from "node-fetch";
 import dotenv from "dotenv";
 dotenv.config();
 
-
-const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
 const MODEL = "openai/gpt-4o-mini";
 
-if (!OPENROUTER_API_KEY) {
-  throw new Error(" OPENROUTER_API_KEY is missing in .env");
+function getOpenRouterApiKey() {
+  const apiKey = process.env.OPENROUTER_API_KEY;
+
+  if (!apiKey) {
+    throw new Error("OPENROUTER_API_KEY is missing");
+  }
+
+  return apiKey;
 }
 
 // --------------------------------------------------
@@ -51,7 +55,7 @@ Rules:
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${OPENROUTER_API_KEY}`,
+      Authorization: `Bearer ${getOpenRouterApiKey()}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -99,7 +103,7 @@ ${qaPairs
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${OPENROUTER_API_KEY}`,
+      Authorization: `Bearer ${getOpenRouterApiKey()}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
@@ -152,7 +156,7 @@ JSON format:
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
     method: "POST",
     headers: {
-      Authorization: `Bearer ${process.env.OPENROUTER_API_KEY}`,
+      Authorization: `Bearer ${getOpenRouterApiKey()}`,
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
