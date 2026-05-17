@@ -1,35 +1,3 @@
-// import SignInForm from "./SignInForm";
-// import SignUpForm from "./SignUpForm";
-// import "../styles/AuthModal.css";
-
-// export default function AuthModal({ type, onClose }) {
-//   return (
-//     <div className="auth-overlay" onClick={onClose}>
-//       {/* 3D PERSPECTIVE WRAPPER */}
-//       <div className="auth-3d-scene">
-//         <div
-//           className="auth-box neon-glow"
-//           onClick={(e) => e.stopPropagation()}
-//         >
-//           <button className="close-btn" onClick={onClose}>
-//             ✕
-//           </button>
-
-//           <div className="auth-header">
-//             <span className="ai-label">AI AUTH SYSTEM</span>
-//             <h2>
-//               {type === "signin" ? "Welcome Back" : "Create Your Account"}
-//             </h2>
-//             <div className="header-glow-line" />
-//           </div>
-
-//           {type === "signin" && <SignInForm onSuccess={onClose} />}
-//           {type === "signup" && <SignUpForm onSuccess={onClose} />}
-//         </div>
-//       </div>
-//     </div>
-//   );
-// }
 import { useRef } from "react";
 import SignInForm from "./SignInForm";
 import SignUpForm from "./SignUpForm";
@@ -79,7 +47,6 @@ export default function AuthModal({ type, onClose }) {
           </button>
 
           <div className="auth-header">
-            <span className="ai-label">AI AUTH SYSTEM</span>
             <h2>
               {type === "signin" ? "Welcome Back" : "Create Your Account"}
             </h2>
