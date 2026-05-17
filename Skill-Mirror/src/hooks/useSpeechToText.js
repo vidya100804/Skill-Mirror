@@ -46,11 +46,16 @@ export default function useSpeechToText() {
     setListening(false);
   };
 
+  const resetTranscript = () => {
+    setTranscript("");
+  };
+
   return {
     transcript,
     listening,
     startListening,
     stopListening,
+    resetTranscript,
     error
   };
 }

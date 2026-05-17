@@ -34,7 +34,7 @@ export default function Interview() {
 
   // 🎙️ Voice hooks (DO NOT TOUCH)
   const { speak, stop, speaking } = useTextToSpeech();
-  const { transcript, listening, startListening, stopListening } =
+  const { transcript, listening, startListening, stopListening, resetTranscript } =
     useSpeechToText();
 
   // 🚫 Guard: no skill or interview → home
@@ -57,6 +57,7 @@ export default function Interview() {
       .then((data) => {
         setQuestionText(data.question);
         setCurrentQuestion(1); // reset counter on start
+        speak(data.question);   // 🔊 Automatically speak the first question
       })
       .catch(() => {
         setQuestionText("Failed to load first question");
@@ -68,6 +69,7 @@ export default function Interview() {
     if (!transcript.trim()) return;
 
     setLoading(true);
+    stop(); // 🔇 Stop active TTS
 
     try {
       const res = await fetch(apiUrl("/api/interview/answer"), {
@@ -83,14 +85,19 @@ export default function Interview() {
 
       // 🎉 INTERVIEW FINISHED
       if (data.done) {
+        resetTranscript();
+        stopListening();
         setResult(data.result); // ✅ store final result
         navigate(`/result/${skill}`);
         return;
       }
 
       // ➡️ NEXT QUESTION
+      resetTranscript(); // 🧹 Clear old answer from text box
+      stopListening();    // 🎙️ Stop listening for new input
       setQuestionText(data.question);
       setCurrentQuestion((prev) => prev + 1);
+      speak(data.question); // 🔊 Automatically speak the next question
     } catch {
       setQuestionText("Error loading next question");
     } finally {
