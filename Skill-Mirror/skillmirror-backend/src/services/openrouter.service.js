@@ -7,7 +7,7 @@ dotenv.config();
 
 
 const OPENROUTER_API_KEY = process.env.OPENROUTER_API_KEY;
-const MODEL = "openai/gpt-4o-mini";
+const MODEL = "google/gemini-2.5-flash";
 
 const getApiKey = () => {
   const key = process.env.OPENROUTER_API_KEY || OPENROUTER_API_KEY;
@@ -43,14 +43,24 @@ function safeJsonParse(raw) {
 // --------------------------------------------------
 export async function generateQuestions(skill, count = 5) {
   const prompt = `
-Generate ${count} interview questions for ${skill}.
+Generate exactly ${count} professional interview questions for ${skill}.
 
-Rules:
-- Short, clear, interview-style questions
-- No numbering
-- No markdown
-- One question per line
-- Plain text only
+STRICT RULES:
+- Return ONLY a raw JSON object
+- DO NOT use markdown formatting (no triple backticks, no \`\`\`json)
+- DO NOT include any introductory or concluding text
+- Each question must be a short, clear, realistic interview question
+
+JSON Format:
+{
+  "questions": [
+    "Question 1 text...",
+    "Question 2 text...",
+    "Question 3 text...",
+    "Question 4 text...",
+    "Question 5 text..."
+  ]
+}
 `;
 
   const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
@@ -67,12 +77,24 @@ Rules:
   });
 
   const data = await res.json();
-  const text = data?.choices?.[0]?.message?.content || "";
+  const raw = data?.choices?.[0]?.message?.content?.trim() || "";
 
-  return text
+  try {
+    const parsed = safeJsonParse(raw);
+    if (parsed && Array.isArray(parsed.questions)) {
+      return parsed.questions;
+    }
+  } catch (err) {
+    console.error("Failed to parse JSON questions, falling back to line split:", err);
+  }
+
+  // Fallback to line splitting in case LLM ignored JSON rules
+  return raw
+    .replace(/```json/gi, "")
+    .replace(/```/g, "")
     .split("\n")
-    .map((q) => q.trim())
-    .filter(Boolean);
+    .map((q) => q.replace(/^\d+\.\s*/, "").trim()) // Remove any number prefixes like "1. "
+    .filter((q) => q.length > 10 && !q.includes("{") && !q.includes("}"));
 }
 
 // --------------------------------------------------
