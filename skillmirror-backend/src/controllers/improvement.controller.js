@@ -11,7 +11,8 @@ export const generateImprovementPlan = async (req, res) => {
     const plan = await generatePlan({ skill, score, strengths, gaps });
 
     res.json({ plan });
-  } catch {
+  } catch (error) {
+    console.error("GENERATE IMPROVEMENT PLAN ERROR:", error);
     res.status(500).json({ message: "Failed to generate improvement plan" });
   }
 };

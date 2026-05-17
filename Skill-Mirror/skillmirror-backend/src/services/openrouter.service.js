@@ -188,7 +188,7 @@ JSON format:
       model: MODEL,
       messages: [{ role: "user", content: prompt }],
       temperature: 0.35,
-      max_tokens: 800,
+      max_tokens: 2500,
     }),
   });
 
