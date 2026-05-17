@@ -29,7 +29,7 @@ export default function SignUpForm({ onSuccess }) {
       login(data);
       onSuccess();
     } catch {
-      setError("AI system unreachable");
+      setError("Connection failed. Please try again.");
     }
   };
 

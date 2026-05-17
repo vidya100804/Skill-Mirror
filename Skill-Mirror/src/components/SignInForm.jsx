@@ -35,7 +35,7 @@ export default function SignInForm({ onSuccess }) {
       login(data);
       onSuccess();
     } catch {
-      setError("AI system unreachable");
+      setError("Connection failed. Please try again.");
       setLoading(false);
     }
   };
