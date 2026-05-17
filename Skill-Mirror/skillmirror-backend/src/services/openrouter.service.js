@@ -73,6 +73,7 @@ JSON Format:
       model: MODEL,
       messages: [{ role: "user", content: prompt }],
       temperature: 0.4,
+      max_tokens: 400,
     }),
   });
 
@@ -133,6 +134,7 @@ ${qaPairs
       model: MODEL,
       messages: [{ role: "user", content: prompt }],
       temperature: 0.2,
+      max_tokens: 500,
     }),
   });
 
@@ -183,9 +185,10 @@ JSON format:
       "Content-Type": "application/json",
     },
     body: JSON.stringify({
-      model: "openai/gpt-4o-mini",
+      model: MODEL,
       messages: [{ role: "user", content: prompt }],
       temperature: 0.35,
+      max_tokens: 800,
     }),
   });
 
