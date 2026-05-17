@@ -8,7 +8,7 @@ if (isProduction && !rawApiUrl) {
   );
 }
 
-const API_BASE_URL = rawApiUrl?.replace(/\/$/, "") || "http://localhost:5000";
+const API_BASE_URL = rawApiUrl?.replace(/\/$/, "") || "http://127.0.0.1:5000";
 
 export const apiUrl = (path) => `${API_BASE_URL}${path}`;
 
