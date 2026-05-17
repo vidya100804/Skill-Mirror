@@ -10,11 +10,13 @@ export const signup = async (req, res) => {
       return res.status(400).json({ message: "All fields are required" });
     }
 
-    const existingUser = await User.findOne({
-      $or: [{ email }, { username }],
-    });
-    
+    // Lowercase & trim to avoid casing mismatch bypasses
+    const normalizedEmail = email.toLowerCase().trim();
+    const normalizedUsername = username.trim();
 
+    const existingUser = await User.findOne({
+      $or: [{ email: normalizedEmail }, { username: normalizedUsername }],
+    });
 
     if (existingUser) {
       return res
@@ -25,8 +27,8 @@ export const signup = async (req, res) => {
     const hashedPassword = await bcrypt.hash(password, 10);
 
     const user = await User.create({
-      username,
-      email,
+      username: normalizedUsername,
+      email: normalizedEmail,
       password: hashedPassword,
     });
 
@@ -37,6 +39,12 @@ export const signup = async (req, res) => {
     });
   } catch (error) {
     console.error("Signup error:", error.message);
+    
+    // Handle MongoDB duplicate key index error (code 11000)
+    if (error.code === 11000) {
+      return res.status(400).json({ message: "Username or Email already exists" });
+    }
+    
     res.status(500).json({ message: "Server error" });
   }
 };
