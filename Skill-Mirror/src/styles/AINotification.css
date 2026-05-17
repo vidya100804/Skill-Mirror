@@ -4,12 +4,12 @@
   right: 28px;
   width: 320px;
   background: linear-gradient(180deg, #050814, #020617);
-  border: 1px solid rgba(0, 255, 213, 0.35);
+  border: 1px solid rgba(45, 212, 191, 0.35);
   border-radius: 16px;
   padding: 16px 18px;
   box-shadow:
-    0 0 30px rgba(0, 255, 213, 0.25),
-    inset 0 0 20px rgba(0, 255, 213, 0.08);
+    0 0 30px rgba(45, 212, 191, 0.25),
+    inset 0 0 20px rgba(45, 212, 191, 0.08);
   animation: aiSlideIn 0.4s ease;
   z-index: 9999;
   color: #e5e7eb;
@@ -26,16 +26,16 @@
 .ai-dot {
   width: 8px;
   height: 8px;
-  background: #00ffd5;
+  background: rgb(45, 212, 191);
   border-radius: 50%;
-  box-shadow: 0 0 10px #00ffd5;
+  box-shadow: 0 0 10px rgb(45, 212, 191);
   animation: pulse 1.5s infinite;
 }
 
 .ai-title {
   font-size: 0.75rem;
   letter-spacing: 1px;
-  color: #00ffd5;
+  color: rgb(45, 212, 191);
   font-weight: 600;
 }
 
@@ -56,7 +56,7 @@
 .ai-progress span {
   display: block;
   height: 100%;
-  background: linear-gradient(90deg, #00ffd5, #00aaff);
+  background: linear-gradient(90deg, rgb(45, 212, 191), #00aaff);
   animation-name: progress;
   animation-timing-function: linear;
   animation-fill-mode: forwards;

@@ -3,7 +3,7 @@
   bottom: 30px;
   right: 30px;
   background: linear-gradient(180deg, #050814, #020617);
-  border: 1px solid rgba(0, 255, 213, 0.3);
+  border: 1px solid rgba(45, 212, 191, 0.3);
   color: #e5e7eb;
   padding: 14px 18px;
   border-radius: 14px;
@@ -12,13 +12,13 @@
   justify-content: space-between;
   align-items: center;
   gap: 12px;
-  box-shadow: 0 0 25px rgba(0, 255, 213, 0.25);
+  box-shadow: 0 0 25px rgba(45, 212, 191, 0.25);
   animation: toastIn 0.35s ease;
   z-index: 9999;
 }
 
 .toast-info {
-  border-left: 4px solid #00ffd5;
+  border-left: 4px solid rgb(45, 212, 191);
 }
 
 .toast-warning {
@@ -38,7 +38,7 @@
 }
 
 .toast button:hover {
-  color: #00ffd5;
+  color: rgb(45, 212, 191);
 }
 
 @keyframes toastIn {
