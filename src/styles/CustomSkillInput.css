@@ -1,0 +1,132 @@
+.custom-skill {
+  margin: 5rem auto 0;
+  max-width: 880px; /* ⬅ increased */
+  background: linear-gradient(180deg, #020617, #020617);
+  border: 1px solid #1e293b;
+  padding: 2.4rem; /* ⬅ more breathing room */
+  border-radius: 24px; /* ⬅ closer to cards */
+}
+.custom-skill h3 {
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #e5e7eb;
+}
+.input-row {
+  display: flex;
+  gap: 1.2rem;
+  margin-top: 1.2rem;
+}
+.input-row input {
+  flex: 1;
+  height: 48px;
+  padding: 0 1rem;
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 12px;
+  color: #e5e7eb;
+  font-size: 0.95rem;
+}
+.input-row button {
+  height: 48px;
+  background: #2dd4bf;
+  color: #020617;
+  padding: 0 1.6rem;
+  border-radius: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+}
+.cancel {
+  margin-top: 1rem;
+  display: inline-block;
+  font-size: 0.85rem;
+  opacity: 0.55;
+  cursor: pointer;
+}
+
+.custom-skill {
+  margin: 4rem auto 0;
+  max-width: 860px; /* 🔥 increased */
+  background: radial-gradient(120% 120% at 50% 0%, #020617, #01030f);
+  border: 1px solid #1e293b;
+  padding: 2.2rem;
+  border-radius: 24px;
+}
+
+/* Input row */
+.input-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.input-row input {
+  flex: 1;
+  background: #020617;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+}
+
+.input-row button {
+  background: #2dd4bf;
+  color: #020617;
+  padding: 0 1.6rem;
+  border-radius: 12px;
+  font-weight: 600;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.input-row button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(45, 212, 191, 0.4);
+}
+
+.cancel {
+  margin-top: 0.8rem;
+  display: inline-block;
+  opacity: 0.6;
+}
+
+/* Base state */
+.custom-skill {
+  position: relative;
+  transition:
+    box-shadow 0.35s ease,
+    border-color 0.35s ease,
+    transform 0.35s ease;
+}
+
+/* Hover glow (soft) */
+.custom-skill:hover {
+  border-color: rgba(45, 212, 191, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(45, 212, 191, 0.15),
+    0 12px 40px rgba(2, 6, 23, 0.9),
+    0 0 28px rgba(45, 212, 191, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Active glow (when input is focused) */
+.custom-skill:focus-within {
+  border-color: #2dd4bf;
+  box-shadow:
+    0 0 0 1px rgba(45, 212, 191, 0.35),
+    0 0 30px rgba(45, 212, 191, 0.25),
+    0 0 60px rgba(45, 212, 191, 0.15);
+}
+.custom-skill {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  border: 1px dashed rgba(0, 255, 213, 0.4);
+  border-radius: 16px;
+  text-align: center;
+}
+
+.custom-skill.locked {
+  opacity: 0.6;
+  font-size: 0.9rem;
+}

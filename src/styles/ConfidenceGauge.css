@@ -1,0 +1,46 @@
+.confidence-gauge {
+  position: relative;
+  width: 260px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.confidence-gauge svg {
+  width: 100%;
+}
+
+.gauge-bg {
+  fill: none;
+  stroke: #1e293b;
+  stroke-width: 12;
+}
+
+.gauge-fill {
+  fill: none;
+  stroke: #2dd4bf;
+  stroke-width: 12;
+  stroke-linecap: round;
+  filter: drop-shadow(0 0 12px rgba(45,212,191,0.6));
+  transition: stroke-dasharray 1s ease;
+}
+
+.score {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 2.6rem;
+  font-weight: 800;
+  color: #e5e7eb;
+}
+
+.score small {
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.label {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.6;
+}

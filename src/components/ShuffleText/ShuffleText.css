@@ -1,0 +1,18 @@
+.shuffle-parent {
+  display: inline-block;
+  visibility: hidden;
+  line-height: 1;
+  font-size: 4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #e5e7eb;
+}
+
+.shuffle-parent.is-ready {
+  visibility: visible;
+}
+
+.shuffle-char {
+  display: inline-block;
+  will-change: transform, opacity;
+}

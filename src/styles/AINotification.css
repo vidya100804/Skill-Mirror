@@ -1,0 +1,117 @@
+.ai-notification {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 320px;
+  background: linear-gradient(180deg, #050814, #020617);
+  border: 1px solid rgba(0, 255, 213, 0.35);
+  border-radius: 16px;
+  padding: 16px 18px;
+  box-shadow:
+    0 0 30px rgba(0, 255, 213, 0.25),
+    inset 0 0 20px rgba(0, 255, 213, 0.08);
+  animation: aiSlideIn 0.4s ease;
+  z-index: 9999;
+  color: #e5e7eb;
+  font-family: system-ui, sans-serif;
+}
+
+.ai-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.ai-dot {
+  width: 8px;
+  height: 8px;
+  background: #00ffd5;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ffd5;
+  animation: pulse 1.5s infinite;
+}
+
+.ai-title {
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  color: #00ffd5;
+  font-weight: 600;
+}
+
+.ai-message {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #d1d5db;
+}
+
+.ai-progress {
+  margin-top: 12px;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.ai-progress span {
+  display: block;
+  height: 100%;
+  background: linear-gradient(90deg, #00ffd5, #00aaff);
+  animation-name: progress;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+}
+
+/* TYPES */
+.ai-warning {
+  border-color: rgba(250, 204, 21, 0.6);
+}
+
+.ai-warning .ai-dot {
+  background: #facc15;
+  box-shadow: 0 0 10px #facc15;
+}
+
+/* ANIMATIONS */
+@keyframes aiSlideIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.6;
+  }
+}
+
+@keyframes progress {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
+.ai-info {
+  border-color: rgba(0, 170, 255, 0.6);
+}
+
+.ai-info .ai-dot {
+  background: #00aaff;
+  box-shadow: 0 0 10px #00aaff;
+}

@@ -1,0 +1,31 @@
+.robo-indicator {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.robo-indicator img {
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 0 6px rgba(45, 212, 191, 0.25));
+}
+
+/* Active (speaking / listening) */
+.robo-indicator.active {
+  opacity: 1;
+}
+
+.robo-indicator.active img {
+  animation: roboPulse 1.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 14px rgba(45, 212, 191, 0.7));
+}
+
+@keyframes roboPulse {
+  0%   { transform: scale(1); }
+  50%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}

@@ -1,0 +1,91 @@
+.result-page {
+  min-height: 100vh;
+  background: radial-gradient(120% 120% at 50% 0%, #020617, #01030f);
+  color: #e5e7eb;
+  padding: 4rem 2rem;
+}
+
+.result-hero {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.result-hero h1 {
+  font-size: 2.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.result-hero p {
+  opacity: 0.6;
+  margin-bottom: 2rem;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.result-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 18px;
+  padding: 1.8rem;
+}
+
+.result-card h3 {
+  margin-bottom: 1rem;
+}
+
+.result-card ul {
+  padding-left: 1.2rem;
+}
+
+.result-card li {
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+}
+
+.result-card.good {
+  border-color: rgba(45, 212, 191, 0.5);
+}
+
+.result-card.gap {
+  border-color: rgba(248, 113, 113, 0.5);
+}
+
+.result-actions {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.result-actions button {
+  padding: 0.8rem 1.6rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.retry {
+  background: transparent;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.retry:hover {
+  border-color: #2dd4bf;
+}
+
+.improve {
+  background: #2dd4bf;
+  color: #020617;
+}
+
+.improve:hover {
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.45);
+}

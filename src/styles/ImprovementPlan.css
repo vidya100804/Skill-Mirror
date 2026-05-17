@@ -1,0 +1,190 @@
+.improvement-page {
+  min-height: 100vh;
+  background: radial-gradient(120% 120% at 50% 0%, #020617, #01030f);
+  color: #e5e7eb;
+  padding: 4rem 2rem;
+}
+
+.improvement-header {
+  text-align: center;
+  max-width: 720px;
+  margin: 0 auto 4rem;
+}
+
+.improvement-header h1 {
+  font-size: 2.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.improvement-header p {
+  opacity: 0.65;
+}
+
+.plan-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 2rem;
+}
+
+.plan-card {
+  background: #020617;
+  border: 1px solid #1e293b;
+  border-radius: 20px;
+  padding: 2rem;
+  position: relative;
+}
+
+.plan-step {
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  opacity: 0.5;
+  text-transform: uppercase;
+}
+
+.plan-card h3 {
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  font-size: 1.3rem;
+}
+
+.plan-reason {
+  opacity: 0.7;
+  margin-bottom: 1.2rem;
+}
+
+.plan-card ul {
+  padding-left: 1.2rem;
+}
+
+.plan-card li {
+  margin-bottom: 0.6rem;
+  opacity: 0.85;
+}
+
+.plan-actions {
+  margin-top: 4rem;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.plan-actions button {
+  padding: 0.8rem 1.8rem;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+}
+
+.primary {
+  background: #2dd4bf;
+  color: #020617;
+}
+
+.primary:hover {
+  box-shadow: 0 0 20px rgba(45, 212, 191, 0.45);
+}
+
+.secondary {
+  background: transparent;
+  border: 1px solid #1e293b;
+  color: #e5e7eb;
+}
+
+.secondary:hover {
+  border-color: #2dd4bf;
+}
+.priority.high {
+  color: #ff4d4f;
+}
+.priority.medium {
+  color: #faad14;
+}
+.priority.low {
+  color: #52c41a;
+}
+
+.plan-card {
+  border-radius: 16px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.04);
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.08);
+}
+
+.plan-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.plan-footer {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  opacity: 0.9;
+}
+
+
+
+
+
+.loading {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  width: 100%;
+  margin-top: 40px;
+
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+
+  color: white;
+
+  
+}
+
+/* Dots animation below text */
+.loading::after {
+  content: "● ● ● ● ●";
+  margin-top: 14px;
+
+  font-size: 0.85rem;
+  letter-spacing: 10px;
+
+  color: rgba(45, 212, 191, 0.6);
+
+  text-shadow:
+    0 0 8px rgba(45, 212, 191, 0.8),
+    0 0 20px rgba(45, 212, 191, 0.5);
+
+  animation: dotsWave 1.4s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes dotsWave {
+  0% {
+    opacity: 0.3;
+    letter-spacing: 6px;
+  }
+  50% {
+    opacity: 1;
+    letter-spacing: 14px;
+  }
+  100% {
+    opacity: 0.3;
+    letter-spacing: 6px;
+  }
+}
+
+@keyframes textFade {
+  0%, 100% {
+    opacity: 0.75;
+  }
+  50% {
+    opacity: 1;
+  }
+}

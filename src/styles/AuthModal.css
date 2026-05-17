@@ -1,0 +1,281 @@
+/* =========================
+   BACKGROUND OVERLAY
+========================= */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background:
+    radial-gradient(circle at top, rgba(0, 255, 213, 0.14), transparent 45%),
+    rgba(1, 5, 18, 0.97);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+/* =========================
+   3D SCENE
+========================= */
+.auth-3d-scene {
+  perspective: 1600px;
+}
+
+/* =========================
+   GLASS AI PANEL
+========================= */
+.auth-box {
+  width: 460px;
+  padding: 3rem 2.8rem 3.2rem;
+  border-radius: 28px;
+  position: relative;
+
+  background: linear-gradient(
+    135deg,
+    rgba(10, 18, 34, 0.88),
+    rgba(3, 10, 22, 0.96)
+  );
+
+  backdrop-filter: blur(22px);
+  border: 1px solid rgba(0, 255, 213, 0.22);
+
+  transform-style: preserve-3d;
+  transform: rotateX(0deg) rotateY(0deg) translateZ(50px);
+  transition: transform 0.25s ease;
+
+  box-shadow:
+    0 50px 140px rgba(0, 0, 0, 0.8),
+    0 0 80px rgba(0, 255, 213, 0.22),
+    inset 0 0 35px rgba(0, 255, 213, 0.08);
+}
+
+/* =========================
+   MOVING LIGHT REFLECTION
+========================= */
+.neon-glass::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 30px;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(0, 255, 213, 0.45),
+    transparent 70%
+  );
+  opacity: 0.45;
+  animation: lightSweep 7s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes lightSweep {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 200% 0%;
+  }
+}
+
+/* =========================
+   DEPTH SHADOW LAYER
+========================= */
+.auth-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 28px;
+  background: linear-gradient(
+    130deg,
+    rgba(0, 0, 0, 0.55),
+    transparent 45%,
+    transparent 60%,
+    rgba(0, 0, 0, 0.8)
+  );
+  pointer-events: none;
+}
+
+/* =========================
+   HEADER
+========================= */
+.auth-header {
+  text-align: center;
+  margin-bottom: 2.6rem;
+  transform: translateZ(40px);
+}
+
+.ai-label {
+  font-size: 0.7rem;
+  letter-spacing: 2.6px;
+  color: rgba(0, 255, 213, 0.9);
+  margin-bottom: 0.6rem;
+  display: block;
+}
+
+.auth-header h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #eafffb;
+  margin-bottom: 0.8rem;
+}
+
+.header-glow-line {
+  width: 110px;
+  height: 3px;
+  margin: 0 auto;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(0, 255, 213, 0.9),
+    transparent
+  );
+  box-shadow: 0 0 20px rgba(0, 255, 213, 0.9);
+  border-radius: 3px;
+}
+
+/* =========================
+   CLOSE BUTTON
+========================= */
+.close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 1.4rem;
+  color: rgba(180, 200, 220, 0.75);
+  cursor: pointer;
+  transition:
+    transform 0.25s ease,
+    color 0.25s ease;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg) scale(1.15);
+  color: #00ffd5;
+}
+/* =========================
+   FORM LAYOUT
+========================= */
+.auth-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  transform: translateZ(35px);
+}
+
+/* =========================
+   INPUT GROUP (GLASS)
+========================= */
+.input-group {
+  position: relative;
+}
+
+.input-group input {
+  width: 100%;
+  height: 48px;
+  padding: 0 1.1rem;
+  border-radius: 14px;
+
+  background: linear-gradient(
+    180deg,
+    rgba(8, 20, 35, 0.85),
+    rgba(4, 12, 25, 0.95)
+  );
+
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  color: #eafffb;
+  font-size: 0.95rem;
+
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    inset 0 2px 6px rgba(0, 0, 0, 0.7),
+    0 0 0 rgba(0, 255, 213, 0);
+
+  transition:
+    border 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Placeholder */
+.input-group input::placeholder {
+  color: rgba(180, 220, 220, 0.45);
+}
+
+/* Focus = AI active */
+.input-group input:focus {
+  outline: none;
+  border-color: rgba(0, 255, 213, 0.9);
+
+  box-shadow:
+    0 0 18px rgba(0, 255, 213, 0.6),
+    inset 0 2px 8px rgba(0, 0, 0, 0.8);
+
+  transform: translateZ(6px);
+}
+
+/* =========================
+   PRIMARY BUTTON (VISIBLE!)
+========================= */
+.auth-btn {
+  margin-top: 0.6rem;
+  height: 50px;
+  border-radius: 16px;
+  border: none;
+  cursor: pointer;
+
+  background: linear-gradient(135deg, #00ffd5, #00b8ff);
+
+  color: #04131f;
+  font-weight: 600;
+  font-size: 1rem;
+
+  box-shadow:
+    0 10px 30px rgba(0, 255, 213, 0.6),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.3);
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover = lift */
+.auth-btn:hover {
+  transform: translateY(-2px) translateZ(8px);
+  box-shadow:
+    0 16px 40px rgba(0, 255, 213, 0.8),
+    inset 0 -2px 6px rgba(0, 0, 0, 0.35);
+}
+
+/* Active = press */
+.auth-btn:active {
+  transform: translateY(0) translateZ(2px);
+}
+/* =========================
+   AMBIENT BREATHING EFFECT
+========================= */
+.auth-box {
+  animation: ambientPulse 6s ease-in-out infinite;
+}
+
+@keyframes ambientPulse {
+  0% {
+    box-shadow:
+      0 50px 140px rgba(0, 0, 0, 0.8),
+      0 0 70px rgba(0, 255, 213, 0.22),
+      inset 0 0 35px rgba(0, 255, 213, 0.08);
+  }
+  50% {
+    box-shadow:
+      0 55px 150px rgba(0, 0, 0, 0.85),
+      0 0 95px rgba(0, 255, 213, 0.35),
+      inset 0 0 45px rgba(0, 255, 213, 0.12);
+  }
+  100% {
+    box-shadow:
+      0 50px 140px rgba(0, 0, 0, 0.8),
+      0 0 70px rgba(0, 255, 213, 0.22),
+      inset 0 0 35px rgba(0, 255, 213, 0.08);
+  }
+}

@@ -1,0 +1,24 @@
+.user-menu {
+  position: relative;
+}
+
+.avatar {
+  width: 38px;
+  height: 38px;
+  background: #2dd4bf;
+  color: #020617;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.menu {
+  position: absolute;
+  right: 0;
+  top: 48px;
+  background: #020617;
+  border: 1px solid #1e293b;
+  padding: 1rem;
+  border-radius: 12px;
+}

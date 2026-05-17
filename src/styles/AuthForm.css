@@ -1,0 +1,311 @@
+/* .auth-card {
+  background: linear-gradient(180deg, #0b0f1a, #050814);
+  border: 1px solid rgba(0, 255, 213, 0.2);
+  border-radius: 16px;
+  padding: 32px;
+  width: 100%;
+  max-width: 380px;
+  box-shadow: 0 0 25px rgba(0, 255, 213, 0.15);
+}
+
+.auth-title {
+  color: #00ffd5;
+  font-size: 1.6rem;
+  text-align: center;
+}
+
+.auth-subtitle {
+  color: #9aa4bf;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.auth-input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 14px;
+  border-radius: 10px;
+  border: 1px solid #1f2a44;
+  background: #0e1425;
+  color: white;
+}
+
+.auth-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: linear-gradient(90deg, #00ffd5, #00aaff);
+  color: black;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.auth-error {
+  color: #ff6b6b;
+  text-align: center;
+} */
+.auth-overlay {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(
+    circle at top,
+    rgba(0, 255, 213, 0.08),
+    rgba(2, 6, 23, 0.95)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: overlayFade 0.3s ease;
+}
+
+/* Card */
+.auth-box {
+  width: 380px;
+  background: linear-gradient(180deg, #050814, #020617);
+  border-radius: 20px;
+  padding: 2.2rem;
+  position: relative;
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  box-shadow:
+    0 0 30px rgba(0, 255, 213, 0.18),
+    inset 0 0 20px rgba(0, 255, 213, 0.05);
+  animation: modalPop 0.35s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Neon accent */
+.neon-glow::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 22px;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(0, 255, 213, 0.35),
+    transparent
+  );
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+/* Header */
+.auth-header {
+  text-align: center;
+  margin-bottom: 1.6rem;
+}
+
+.auth-header h2 {
+  color: #00ffd5;
+  font-size: 1.6rem;
+  margin-bottom: 0;
+}
+
+/* Close */
+.close-btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: #94a3b8;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition:
+    transform 0.2s,
+    color 0.2s;
+}
+
+.close-btn:hover {
+  transform: rotate(90deg);
+  color: #00ffd5;
+}
+
+/* Animations */
+@keyframes modalPop {
+  from {
+    opacity: 0;
+    transform: scale(0.92) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes overlayFade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+/* =========================
+   ERROR MESSAGE (AI WARNING)
+========================= */
+.auth-error {
+  margin-top: -0.4rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  font-size: 0.85rem;
+  color: #ffdada;
+
+  background: linear-gradient(
+    180deg,
+    rgba(80, 10, 10, 0.85),
+    rgba(40, 5, 5, 0.95)
+  );
+
+  border: 1px solid rgba(255, 80, 80, 0.5);
+  box-shadow: 0 0 18px rgba(255, 80, 80, 0.45);
+}
+
+/* =========================
+   INPUT BASE (ENSURE PRESENT)
+========================= */
+.auth-input {
+  width: 100%;
+  height: 48px;
+  padding: 0 1.1rem;
+  border-radius: 14px;
+  background: linear-gradient(
+    180deg,
+    rgba(8, 20, 35, 0.85),
+    rgba(4, 12, 25, 0.95)
+  );
+  border: 1px solid rgba(0, 255, 213, 0.25);
+  color: #eafffb;
+  font-size: 0.95rem;
+}
+/* =========================
+   GLASS AI ACTION BUTTON
+========================= */
+.auth-btn {
+  position: relative;
+  width: 100%;
+  height: 54px;
+  border-radius: 20px;
+  border: 1px solid rgba(0, 255, 213, 0.45);
+  cursor: pointer;
+  overflow: hidden;
+
+  /* Glass background */
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 213, 0.25),
+    rgba(0, 140, 255, 0.18)
+  );
+
+  backdrop-filter: blur(14px);
+
+  color: #eafffb;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.35),
+    inset 0 -8px 18px rgba(0, 0, 0, 0.35),
+    0 18px 45px rgba(0, 255, 213, 0.45);
+
+  transform: translateZ(14px);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease,
+    border-color 0.3s ease;
+}
+
+/* =========================
+   GLASS LIGHT REFRACTION
+========================= */
+.auth-btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 25%,
+    rgba(255, 255, 255, 0.55),
+    transparent 75%
+  );
+  opacity: 0.35;
+  transform: translateX(-120%);
+  transition: transform 0.8s ease;
+}
+
+/* =========================
+   HOVER = GLASS LIFT
+========================= */
+.auth-btn:hover {
+  transform: translateY(-3px) translateZ(24px);
+  border-color: rgba(0, 255, 213, 0.9);
+
+  box-shadow:
+    inset 0 1px 2px rgba(255, 255, 255, 0.5),
+    inset 0 -10px 22px rgba(0, 0, 0, 0.45),
+    0 26px 70px rgba(0, 255, 213, 0.8);
+}
+
+.auth-btn:hover::before {
+  transform: translateX(120%);
+}
+
+/* =========================
+   ACTIVE = GLASS PRESS
+========================= */
+.auth-btn:active {
+  transform: translateY(0) translateZ(10px);
+  box-shadow:
+    inset 0 3px 10px rgba(0, 0, 0, 0.6),
+    0 10px 25px rgba(0, 255, 213, 0.5);
+}
+/* =========================
+   FLOATING INPUT LAYERS
+========================= */
+.input-group {
+  transform: translateZ(22px);
+  transition: transform 0.25s ease;
+}
+
+/* Focus = input rises slightly */
+.input-group:focus-within {
+  transform: translateZ(34px);
+}
+/* =========================
+   HOLOGRAM LOADING STATE
+========================= */
+.auth-btn.loading {
+  cursor: not-allowed;
+  color: rgba(230, 255, 250, 0.9);
+  background: linear-gradient(
+    180deg,
+    rgba(0, 255, 213, 0.25),
+    rgba(0, 140, 255, 0.25)
+  );
+}
+
+/* Hologram scan */
+.auth-btn.loading::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent 30%,
+    rgba(0, 255, 213, 0.6),
+    transparent 70%
+  );
+  animation: holoScan 1.2s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes holoScan {
+  from {
+    transform: translateX(-120%);
+  }
+  to {
+    transform: translateX(120%);
+  }
+}
